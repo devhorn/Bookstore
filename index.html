@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main_style.css" />
+    <link rel="stylesheet" href="styles/book_style.css" />
+    <script src="scripts/template.js"></script>
+    <script src="scripts/db.js"></script>
+    <script src="scripts/script.js"></script>
+    <title>Bookstore</title>
+  </head>
+  <body onload="renderBooks()">
+    <div class="content">
+      <header>
+        <div class="headerContent maxWidth">
+          <img src="assets/icon/book.png" alt="" />
+          <div>
+            <h1><span class="daLogo">DA</span>Bookstore</h1>
+          </div>
+          <div>
+            <h4>-</h4>
+          </div>
+          <div>
+            <h4>get your book here</h4>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div id="booksContent" class="mainContent maxWidth"></div>
+      </main>
+      <footer>
+        <div class="footerContent maxWidth">
+          <p>Created by Manuel Horn</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
