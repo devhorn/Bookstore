@@ -64,12 +64,23 @@
 .infoTable table td {
   height: 8px;
 }
+
+.infoType {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.infoText {
+  font-size: 14px;
+  padding-left: 6px;
+}
 .bookComment {
   padding: 16px;
 }
 
 .bookComment h3 {
   margin-bottom: 8px;
+  font-size: 24px;
 }
 
 .commentContainer {
@@ -77,6 +88,21 @@
   scrollbar-width: thin;
   height: 120px;
   overflow: auto;
+}
+
+.comment {
+  border-bottom: 0.2px solid var(--text-color);
+  margin-bottom: 6px;
+}
+
+.commentUser {
+  font-weight: bold;
+  color: var(--divider-color);
+}
+
+.commentText {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .commentInput {

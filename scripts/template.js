@@ -10,7 +10,7 @@ function getBookTemplate(bookElement) {
               <div class="priceAndLikeContainer">
                 <p id="price">${bookElement.price} €</p>
                 <div class="likeContainer">
-                  <p id="likeCounter">1000</p>
+                  <p id="likeCounter">${bookElement.likes}</p>
                   <img
                     src="./assets/icon/favorite_24dp_F15E51_FILL0_wght300_GRAD0_opsz24.svg"
                     alt=""
@@ -20,33 +20,47 @@ function getBookTemplate(bookElement) {
               <div class="infoTable">
                 <table>
                   <tr>
-                    <td>Author</td>
-                    <td>: ${bookElement.author}</td>
+                    <td class="infoType">Author</td>
+                    <td class="infoText">: ${bookElement.author}</td>
                   </tr>
                   <tr>
-                    <td>Erscheinungsjahr</td>
-                    <td>: ${bookElement.publishedYear}</td>
+                    <td class="infoType">Erscheinungsjahr</td>
+                    <td class="infoText">: ${bookElement.publishedYear}</td>
                   </tr>
                   <tr>
-                    <td>Gerne</td>
-                    <td>: ${bookElement.genre}</td>
+                    <td class="infoType">Gerne</td>
+                    <td class="infoText">: ${bookElement.genre}</td>
                   </tr>
                 </table>
               </div>
             </div>
             <div class="bookComment">
               <h3>Kommentare</h3>
-              <div class="commentContainer">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam pariatur iure nemo deserunt suscipit magni, ad
-                  voluptatum vel error magnam explicabo porro temporibus, iste
-                  sapiente. Qui consequuntur amet tempora voluptatibus. Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-                  pariatur iure nemo deserunt suscipit magni, ad voluptatum vel
-                  error magnam explicabo porro temporibus, iste sapiente. Qui
-                  consequuntur amet tempora voluptatibus.
-                </p>
+              <div id="commentContent" class="commentContainer">
+                <div class="comment">
+                  <p class="commentUser">Manuel<p>
+                  <p class="commentText">lorem asdaisjdaosi ajdsnoansdo ajsndoadns</p>
+                </div>
+                <div class="comment">
+                  <p class="commentUser">Manuel<p>
+                  <p class="commentText">lorem asdaisjdaosi ajdsnoansdo ajsndoadns</p>
+                </div>
+                <div class="comment">
+                  <p class="commentUser">Manuel<p>
+                  <p class="commentText">lorem asdaisjdaosi ajdsnoansdo ajsndoadns lorem asdaisjdaosi ajdsnoansdo ajsndoadns lorem asdaisjdaosi ajdsnoansdo ajsndoadns lorem asdaisjdaosi ajdsnoansdo ajsndoadns lorem asdaisjdaosi ajdsnoansdo ajsndoadns</p>
+                </div>
+                <div class="comment">
+                  <p class="commentUser">Manuel<p>
+                  <p class="commentText">lorem asdaisjdaosi ajdsnoansdo ajsndoadns</p>
+                </div>
+                <div class="comment">
+                  <p class="commentUser">Manuel<p>
+                  <p class="commentText">lorem asdaisjdaosi ajdsnoansdo ajsndoadns</p>
+                </div>
+                <div class="comment">
+                  <p class="commentUser">Manuel<p>
+                  <p class="commentText">lorem asdaisjdaosi ajdsnoansdo ajsndoadns</p>
+                </div>
               </div>
               <div class="commentInput">
                 <input type="text" placeholder="Schreibe ein Kommentar..." />
