@@ -1,4 +1,4 @@
-function getBookTemplate(bookElement) {
+function getBookTemplate(bookElement, bookIndex) {
   return `<div class="bookContainer">
             <div class="bookTitle">
               <h3>${bookElement.name}</h3>
@@ -36,32 +36,9 @@ function getBookTemplate(bookElement) {
             </div>
             <div class="bookComment">
               <h3>Kommentare</h3>
-              <div id="commentContent" class="commentContainer">
-                <div class="comment">
-                  <p class="commentUser">Manuel<p>
-                  <p class="commentText">lorem asdaisjdaosi ajdsnoansdo ajsndoadns</p>
-                </div>
-                <div class="comment">
-                  <p class="commentUser">Manuel<p>
-                  <p class="commentText">lorem asdaisjdaosi ajdsnoansdo ajsndoadns</p>
-                </div>
-                <div class="comment">
-                  <p class="commentUser">Manuel<p>
-                  <p class="commentText">lorem asdaisjdaosi ajdsnoansdo ajsndoadns lorem asdaisjdaosi ajdsnoansdo ajsndoadns lorem asdaisjdaosi ajdsnoansdo ajsndoadns lorem asdaisjdaosi ajdsnoansdo ajsndoadns lorem asdaisjdaosi ajdsnoansdo ajsndoadns</p>
-                </div>
-                <div class="comment">
-                  <p class="commentUser">Manuel<p>
-                  <p class="commentText">lorem asdaisjdaosi ajdsnoansdo ajsndoadns</p>
-                </div>
-                <div class="comment">
-                  <p class="commentUser">Manuel<p>
-                  <p class="commentText">lorem asdaisjdaosi ajdsnoansdo ajsndoadns</p>
-                </div>
-                <div class="comment">
-                  <p class="commentUser">Manuel<p>
-                  <p class="commentText">lorem asdaisjdaosi ajdsnoansdo ajsndoadns</p>
-                </div>
-              </div>
+              <div id=${
+                "commentContent" + bookIndex
+              } class="commentContainer"></div>
               <div class="commentInput">
                 <input type="text" placeholder="Schreibe ein Kommentar..." />
                 <img src="./assets/icon/send.png" alt="" />
@@ -69,4 +46,11 @@ function getBookTemplate(bookElement) {
             </div>
           </div>
         </div>`;
+}
+
+function getCommentTemplate(commentElement) {
+  return `<div class="comment">
+              <p class="commentUser">${commentElement.name}<p>
+              <p class="commentText">${commentElement.comment}</p>
+          </div>`;
 }
