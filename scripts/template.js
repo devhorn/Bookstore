@@ -1,19 +1,19 @@
-function getBookTemplate(bookElement, bookIndex) {
+function getBookTemplate(bookElement, bookIndex, bookPrice) {
   return `<div class="bookContainer">
             <div class="bookTitle">
               <h3>${bookElement.name}</h3>
             </div>
             <div class="bookImg">
-              <img src="./assets/icon/book_container.png" alt="" />
+              <img src="./assets/icon/open-book.png" alt="" />
             </div>
             <div class="bookInformation">
               <div class="priceAndLikeContainer">
-                <p id="price">${bookElement.price} €</p>
+                <p id="price">${bookPrice} €</p>
                 <div class="likeContainer">
                   <p id="likeCounter">${bookElement.likes}</p>
                   <img
                     src="./assets/icon/favorite_24dp_F15E51_FILL0_wght300_GRAD0_opsz24.svg"
-                    alt=""
+                    alt="heart"
                   />
                 </div>
               </div>

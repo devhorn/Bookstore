@@ -54,6 +54,15 @@
   gap: 6px;
 }
 
+.likeContainer img {
+  width: 30px;
+}
+
+.likeContainer img:hover {
+  filter: drop-shadow(0 0 5px #ef1f1f);
+  cursor: pointer;
+}
+
 .infoTable {
   padding: 16px;
   display: flex;
@@ -84,10 +93,20 @@
 }
 
 .commentContainer {
-  scrollbar-color: var(--divider-color) var(--main-bg-color);
-  scrollbar-width: thin;
   height: 120px;
   overflow: auto;
+  padding-right: 10px;
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--main-bg-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--divider-color);
+  }
 }
 
 .comment {

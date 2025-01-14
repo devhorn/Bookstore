@@ -1,3 +1,17 @@
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--main-bg-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--divider-color);
+  border-radius: 5px;
+}
+
 :root {
   --header-footer-bg-color: #082129;
   --da-red: #f15e51;
