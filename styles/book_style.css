@@ -8,6 +8,10 @@
   font-family: "Roboto", serif;
 }
 
+.dNone {
+  display: none;
+}
+
 .bookContainer {
   width: 300px;
   background-color: var(--book-bg-color);
@@ -96,6 +100,7 @@
   height: 120px;
   overflow: auto;
   padding-right: 10px;
+  margin-bottom: 16px;
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -124,6 +129,19 @@
   padding-bottom: 8px;
 }
 
+.userNameInput {
+  background-color: var(--divider-color);
+  border-width: 0;
+  border-radius: 5px;
+  padding-left: 8px;
+  height: 30px;
+  width: 230px;
+}
+
+.userNameInput::placeholder {
+  color: rgb(221, 219, 219);
+}
+
 .commentInput {
   margin-top: 16px;
   display: flex;
@@ -141,7 +159,7 @@
 }
 
 .commentInput input::placeholder {
-  color: rgb(176, 176, 176);
+  color: rgb(221, 219, 219);
 }
 
 .commentInput img:hover {

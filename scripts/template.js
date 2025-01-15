@@ -1,18 +1,22 @@
-function getBookTemplate(bookElement, bookIndex, bookPrice) {
+function getBookTemplate(bookIndex, price) {
   return `<div class="bookContainer">
             <div class="bookTitle">
-              <h3>${bookElement.name}</h3>
+              <h3>${books[bookIndex].name}</h3>
             </div>
             <div class="bookImg">
               <img src="./assets/icon/open-book.png" alt="" />
             </div>
             <div class="bookInformation">
               <div class="priceAndLikeContainer">
-                <p id="price">${bookPrice} €</p>
+                <p id="price">${price} €</p>
                 <div class="likeContainer">
-                  <p id="likeCounter">${bookElement.likes}</p>
+                  <p id="${"likeCounter" + bookIndex}">${
+    books[bookIndex].likes
+  }</p>
                   <img
-                    src="./assets/icon/favorite_24dp_F15E51_FILL0_wght300_GRAD0_opsz24.svg"
+                  id="${"heart" + bookIndex}"
+                    onclick="likeBook(${bookIndex})"
+                    src="./assets/icon/heart_unfilled.svg"
                     alt="heart"
                   />
                 </div>
@@ -21,15 +25,17 @@ function getBookTemplate(bookElement, bookIndex, bookPrice) {
                 <table>
                   <tr>
                     <td class="infoType">Author</td>
-                    <td class="infoText">: ${bookElement.author}</td>
+                    <td class="infoText">: ${books[bookIndex].author}</td>
                   </tr>
                   <tr>
                     <td class="infoType">Erscheinungsjahr</td>
-                    <td class="infoText">: ${bookElement.publishedYear}</td>
+                    <td class="infoText">: ${
+                      books[bookIndex].publishedYear
+                    }</td>
                   </tr>
                   <tr>
                     <td class="infoType">Gerne</td>
-                    <td class="infoText">: ${bookElement.genre}</td>
+                    <td class="infoText">: ${books[bookIndex].genre}</td>
                   </tr>
                 </table>
               </div>
@@ -39,9 +45,16 @@ function getBookTemplate(bookElement, bookIndex, bookPrice) {
               <div id=${
                 "commentContent" + bookIndex
               } class="commentContainer"></div>
-              <div class="commentInput">
-                <input type="text" placeholder="Schreibe ein Kommentar..." />
-                <img src="./assets/icon/send.png" alt="" />
+              <div class="inputContainer">
+                <input id="${
+                  "user" + bookIndex
+                }" class="userNameInput" type="text" placeholder="Username..." />
+                <div class="commentInput">
+                  <input id="${
+                    "comment" + bookIndex
+                  }" type="text" placeholder="Schreibe ein Kommentar..." />
+                  <img onclick="addComment(${bookIndex})" src="./assets/icon/send.png" alt="" />
+                </div>
               </div>
             </div>
           </div>
