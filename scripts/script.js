@@ -77,26 +77,24 @@ function addComment(bookIndex) {
 
 function saveToLocalStorage(indexBook) {
   localStorage.setItem(
-    `liked${indexBook}`,
+    `likedBook${indexBook}`,
     JSON.stringify(books[indexBook].liked)
   );
   localStorage.setItem(
-    `likes${indexBook}`,
+    `likesBook${indexBook}`,
     JSON.stringify(books[indexBook].likes)
   );
   localStorage.setItem(
-    `books${indexBook}.comments`,
+    `commentsBook${indexBook}`,
     JSON.stringify(books[indexBook].comments)
   );
 }
 
 function getBookFromLocalStorage() {
   for (let indexBook = 0; indexBook < books.length; indexBook++) {
-    let liked = JSON.parse(localStorage.getItem(`liked${indexBook}`));
-    let likes = JSON.parse(localStorage.getItem(`likes${indexBook}`));
-    let comments = JSON.parse(
-      localStorage.getItem(`books${indexBook}.comments`)
-    );
+    let liked = JSON.parse(localStorage.getItem(`likedBook${indexBook}`));
+    let likes = JSON.parse(localStorage.getItem(`likesBook${indexBook}`));
+    let comments = JSON.parse(localStorage.getItem(`commentsBook${indexBook}`));
 
     if (liked || likes || comments !== null) {
       books[indexBook].liked = liked;
