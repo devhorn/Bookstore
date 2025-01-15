@@ -16,11 +16,7 @@ function getBookTemplate(bookIndex, price) {
                   <img
                   id="${"heart" + bookIndex}"
                     onclick="likeOrDislikeBook(${bookIndex})"
-                    src="${
-                      books[bookIndex].liked
-                        ? "./assets/icon/heart_filled.svg"
-                        : "./assets/icon/heart_unfilled.svg"
-                    }"
+                    src="./assets/icon/heart_unfilled.svg"
                     alt="heart"
                   />
                 </div>

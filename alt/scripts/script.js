@@ -1,8 +1,3 @@
-function init() {
-  getBookFromLocalStorage();
-  renderBooks();
-}
-
 function renderBooks() {
   let booksContentRef = document.getElementById("booksContent");
   booksContentRef.innerHTML = "";
@@ -52,7 +47,6 @@ function likeOrDislikeBook(bookIndex) {
     likeCounterRef.innerHTML = books[bookIndex].likes;
     books[bookIndex].liked = false;
   }
-  saveToLocalStorage(bookIndex);
 }
 
 function addComment(bookIndex) {
@@ -72,36 +66,4 @@ function addComment(bookIndex) {
   commentContentRef.innerHTML += `<div class="comment"><p class="commentUser">${userName}<p><p class="commentText">${comment}</p></div>`;
   userRef.value = "";
   commentRef.value = "";
-  saveToLocalStorage(bookIndex);
-}
-
-function saveToLocalStorage(indexBook) {
-  localStorage.setItem(
-    `liked${indexBook}`,
-    JSON.stringify(books[indexBook].liked)
-  );
-  localStorage.setItem(
-    `likes${indexBook}`,
-    JSON.stringify(books[indexBook].likes)
-  );
-  localStorage.setItem(
-    `books${indexBook}.comments`,
-    JSON.stringify(books[indexBook].comments)
-  );
-}
-
-function getBookFromLocalStorage() {
-  for (let indexBook = 0; indexBook < books.length; indexBook++) {
-    let liked = JSON.parse(localStorage.getItem(`liked${indexBook}`));
-    let likes = JSON.parse(localStorage.getItem(`likes${indexBook}`));
-    let comments = JSON.parse(
-      localStorage.getItem(`books${indexBook}.comments`)
-    );
-
-    if (liked || likes || comments !== null) {
-      books[indexBook].liked = liked;
-      books[indexBook].likes = likes;
-      books[indexBook].comments = comments;
-    }
-  }
 }
